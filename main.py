@@ -1,3 +1,6 @@
+import sys
+text = sys.stdin.read()
+
 text = input()
 sents = text.replace("!", ".").replace("?", ".").replace("-", "").replace(",", " ").replace(":", " ").replace(";", " ").split(".")
 sents_without_spaces = []
