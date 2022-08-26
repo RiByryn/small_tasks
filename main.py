@@ -9,16 +9,15 @@ text = sys.stdin.read()
 sents = re.split("[!?.]", text)
 
 count = 0
-print(sents)
+# print(sents)
 for sent in sents:
     comp = re.compile("[A-Za-z]+")
     words = []
-    if len(sent) > 0:
-        if comp.findall(sent)[0].islower():
+    words = comp.findall(sent)
+    if len(words) > 0:
+        if words[0][0].islower():
             count = count + 1
-        print(sent)
-        words.extend(comp.findall(sent))
-        print(words)
+        # print(words)
         for word in words:
             for j in range(1, len(word)):
                 if word[j].isupper():
